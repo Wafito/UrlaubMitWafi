@@ -27,7 +27,8 @@ body {
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Verhindert seitliches Scrollen */
+    overflow-y: auto;   /* Erlaubt vertikales Scrollen auf Smartphones */
 }
 
 body.overflow-hidden {
