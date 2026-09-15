@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="center-content overflow-hidden">
+    <div class="card canvas-container">
+        <h1>WOOHOOO! 👑❤️</h1>
+
+        <p>
+            Ihre Hoheit hat mich soeben sehr glücklich gemacht! 🥹
+        </p>
+
+        <p>
+            Das freut mich sehr,
+            nicht nur so viel Zeit wie möglich im Urlaub in Spanien mit dir zu verbringen,
+            sondern auch unter Ihrem Regime zu leben 😌👑
+        </p>
+
+        <p>
+            Teilt diese erfreuliche Nachricht
+            nun mit Eurem Wafi auf WhatsApp. 💌
+        </p>
+
+        <a id="whatsapp-link" href="#" class="btn-whatsapp">
+            Die frohe Botschaft verkünden 💬❤️
+        </a>
+
+        <p>
+            <br>
+            Aber Spaß beiseite, und damit wir unsere schöne Demokratie nicht wirklich vergessen: <br>
+            Falls du das nicht möchtest oder aus welchem Grund auch immer lieber Nein sagen möchtest, kannst du mir das natürlich jederzeit offen und ehrlich sagen ❤️
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = () => {
+            createHearts();
+            createConfetti();
+
+            const dates = JSON.parse(localStorage.getItem('selectedDates'));
+            let dateText = "";
+
+            if (dates && dates.d1) {
+                const formatDate = (str) => {
+                    if (!str) return null;
+                    const [y, m, d] = str.split('-');
+                    return `${d}.${m}.${y}`;
+                };
+
+                const formatted1 = formatDate(dates.d1);
+                const formatted2 = formatDate(dates.d2);
+                const formatted3 = formatDate(dates.d3);
+
+                
+            }
+
+            const baseUrl = "https://wa.me/+4917632371605?text=";
+
+            const message =
+                `Wafiiiiiiiii 😭❤️ jetzt Spaß zur Seite... ` +
+                `ich würde sehr, sehr gerne im Urlaub in Spanien so viel Zeit mit dir verbringen, wie ich will!!!! 🥹😍❤️ ` +
+                `Deine Livia 👑`;
+
+            document.getElementById('whatsapp-link').href =
+                baseUrl + encodeURIComponent(message);
+        };
+    </script>
+</body>
+</html>
